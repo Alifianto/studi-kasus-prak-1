@@ -1,0 +1,59 @@
+//ALIF FIANTO ROMADHON
+//2100018081
+//STUDI KASUS
+#include <stdio.h>
+#include <conio.h>
+//membuat include ctime untuk waktu pembelian
+#include <ctime>
+#include <iostream>
+using namespace std;
+
+struct penjualan
+{//pendeklarasian satuan liter dan hasil yang akan ada di dalam proses 
+ float liter;
+ float hasil;
+ int n;
+} bbm;
+
+int main()
+{//penentuan waktu transaksi
+ time_t now = time(0);
+ char* dt = ctime(&now);
+ //rumus dan output tampilan untuk user
+ 
+ printf ("Penjualan SPBU TAMSIS\n");
+ printf ("1.PERTAMAX 2.PERTALITE\nMasukan jenis BBM : ");
+ 
+ scanf ("%d", &bbm.n);
+ printf ("Masukan pembelian perliter : ");
+ scanf ("%f", &bbm.liter);
+ 
+ printf ("\n\n\n\n");
+ printf ("PETAMINA\n");
+ printf ("SPBU TAMSIS\n");
+ cout << dt << endl;
+ printf ("--------------------------------\n");
+
+ {
+ 
+  if (bbm.n == 1)
+  {//jika user memilih untuk membeli pertamax
+   bbm.hasil = 9000 * bbm.liter;//rumus proses pertamax
+   printf ("Jenis BBM     : PERTAMAX\n");
+  }
+  else
+   if (bbm.n == 2)
+   {//jika user memilih untuk membeli pertalite
+    bbm.hasil = 7000 * bbm.liter;//rumus proses pertalite
+    printf ("Jenis BBM     : PERTALITE\n");
+   }
+   
+     
+ }
+  //output keterangan liter,harga dan total yang harus di bayarkan 
+ printf ("Liter         : %.2f\n", bbm.liter);
+ printf ("Harga/iter    : Rp. %.f\n", bbm.hasil / bbm.liter);
+ printf ("Total         : Rp. %.f\n", bbm.hasil);
+ printf ("================================\n");
+ printf ("Terima kasih dan selamat jalan");
+}
